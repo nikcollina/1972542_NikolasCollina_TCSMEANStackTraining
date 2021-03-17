@@ -3,7 +3,6 @@ var blogsData = [];
 function addBlog(){
     var blogData = readFormData();
     insertNewBlog(blogData);
-    insertGrid(blogData)
     clear();
     blogsData.push(blogData);
     storeInSession();
@@ -50,11 +49,6 @@ function insertNewBlog(blogData){
     var cell3 = newRow.insertCell(0);
     cell3.innerHTML="<img src='" + blogData.imageInfo +"' alt='blog image'>";
     }
-}
-
-function insertGrid(blogdata){
-    var last = document.getElementById("lastRow")
-    console.log(last)
 }
 
 function clear(){
