@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Blogging</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="blogScript.js"></script>
+    <link rel="stylesheet" href="blogStyle.css">
+</head>
+<body onload="retrieveFromSession()">
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="headerImg">
+        <h1 class="title headerText">Simply Blog</h1>
+        <h4 class="headerText">A Simple Blogging Site</h4>
+    </div>
+
+
+    <div class="container-fluid">
+        <form class="newBlogForm" action="">
+            <div class="row justify-content-center">
+                <div class="form-floating mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Description</label>
+                    <textarea type="text" id="desc" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="mb-3">
+                    <label for="imageId" class="form-label">Image</label>
+                    <input type="file" id="imageId" class="form-control"/>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class=" mb-3">
+                    <button type="button" class="btn btn-primary" onclick="addBlog()">
+                        Add Blog
+                    </button>
+                    <button type="reset" class="btn btn-danger">
+                        Clear
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <div class="row justify-content-center">
+            <h1>Blogs</h1>
+        </div>
+
+
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <table id="blogs">
+                    <thead>
+                        <tr>
+                            <th><h1></h1></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="reset">Search</button>
+            </form>
+        </nav>
+        </div>
+    </footer>
+    
+</body>
+</html>
