@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="cartScript.js"></script>
+    <link rel="stylesheet" href="cartStyle.css">
+</head>
+<body onload="retrieveSession(); getCartCount()">
+
+    <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
+        <ul class="navbar-nav mr-auto">
+            <li>
+                <p id="cartItemNumber"></p>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <button type="button" class="btn btn-success" onclick="storeSession(); window.location.href='checkout.html'">
+                Checkout
+            </button>
+        </form>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <h1>Shopping Cart</h1>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <p>Playstation 5</p>
+                <img src="https://images-na.ssl-images-amazon.com/images/I/619BkvKW35L._SX342_.jpg" 
+                alt="" class="productImage">
+                <p>499.99</p>
+                <p id="ps5Console"></p>
+                <button type="button" class="btn btn-primary" onclick="addToCart(ps5Console)">
+                    Add to Cart
+                </button>
+                <button type="button" class="btn btn-danger" onclick="removeFromCart(ps5Console)">
+                    Remove From Cart
+                </button>
+            </div>
+            <div class="col text-center">
+                <p>Dualsense Controller</p>
+                <img src="https://i5.walmartimages.com/asr/c4ced5e4-6dd2-44d4-b8cf-795336f18864.b36f9bb71bcf08d98fd96c6d656da5d5.png" 
+                alt="" class="productImage">
+                <p>69.99</p>
+                <button type="button" class="btn btn-primary" onclick="addToCart(ps5Controller)">
+                    Add to Cart
+                </button>
+                <button type="button" class="btn btn-danger" onclick="removeFromCart(ps5Controller)">
+                    Remove From Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <p>Xbox Series X</p>
+                <img src="https://compass-ssl.xbox.com/assets/f0/85/f085c120-d3d5-4424-8b70-eb25deaa326e.png?n=XBX_A-BuyBoxBGImage01-D.png" 
+                alt="" class="productImage">
+                <p>499.99</p>
+                <button type="button" class="btn btn-primary" onclick="addToCart(xboxConsole)">
+                    Add to Cart
+                </button>
+                <button type="button" class="btn btn-danger" onclick="removeFromCart(xboxConsole)">
+                    Remove From Cart
+                </button>
+            </div>
+            <div class="col text-center">
+                <p>Xbox Series X Controller</p>
+                <img src="https://media.gamestop.com/i/gamestop/11108954/Microsoft-Xbox-Series-X-Carbon-Black-Wireless-Controller?$pdp$" 
+                alt="" class="productImage">
+                <p>59.99</p>
+                <button type="button" class="btn btn-primary" onclick="addToCart(xboxController)">
+                    Add to Cart
+                </button>
+                <button type="button" class="btn btn-danger" onclick="removeFromCart(xboxController)">
+                    Remove From Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <p>Nintendo Switch</p>
+                <img src="https://www.nintendo.com/content/dam/noa/en_US/images/switch/system/three-modes-in-one.png" 
+                alt="" class="productImage">
+                <p>299.99</p>
+                <button type="button" class="btn btn-primary" onclick="addToCart(switchConsole)">
+                    Add to Cart
+                </button>
+                <button type="button" class="btn btn-danger" onclick="removeFromCart(switchConsole)">
+                    Remove From Cart
+                </button>
+            </div>
+            <div class="col text-center">
+                <p>Joycon</p>
+                <img src="https://cdn.geekwire.com/wp-content/uploads/2020/11/switch-joycon-630x391.png" 
+                alt="" class="productImage">
+                <p>79.99</p>
+                <button type="button" class="btn btn-primary" onclick="addToCart(switchController)">
+                    Add to Cart
+                </button>
+                <button type="button" class="btn btn-danger" onclick="removeFromCart(switchController)">
+                    Remove From Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
