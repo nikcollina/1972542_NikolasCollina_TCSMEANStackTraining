@@ -1,0 +1,25 @@
+<div class="row justify-content-center">
+
+    <form [formGroup]="loginRef" (ngSubmit)="checkUser()">
+        <div class="row justify-content-center">
+            <div class="col-4 mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" formControlName="user" class="form-control"/><br />
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-4 mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" formControlName="pass" class="form-control"/><br />
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col mb-3">
+                <input type="submit" value="Log In" class="btn btn-primary">
+                <input type="reset" value="Clear" class="btn btn-danger">
+                <input type="button" value="Sign Up" (click)="goSignUp()" class="btn btn-primary"/>
+            </div>
+        </div>
+    </form>
+    {{msg}}
+</div>
