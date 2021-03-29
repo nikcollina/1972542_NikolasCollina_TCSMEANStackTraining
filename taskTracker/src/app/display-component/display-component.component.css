@@ -1,0 +1,15 @@
+table,th,td {
+    text-align: center;
+}
+table {
+    min-width: 75%;
+    empty-cells: hide;
+}
+th {
+    height: 25px;
+    background-color:#3c54b4;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: rgb(171, 179, 179);
+}

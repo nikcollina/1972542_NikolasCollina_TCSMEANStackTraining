@@ -1,0 +1,25 @@
+<div>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <h2>Add To-Do Tasks</h2>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <table mat-table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Task</th>
+                    <th>Deadline</th>
+                </tr>
+                <tr *ngFor="let task of tasks">
+                    <td>{{task.id}}</td>
+                    <td>{{task.name}}</td>
+                    <td>{{task.task}}</td>
+                    <td>{{task.deadline}}</td>
+                </tr>
+            </table>
+        </mat-card-content>
+    </mat-card>
+</div>

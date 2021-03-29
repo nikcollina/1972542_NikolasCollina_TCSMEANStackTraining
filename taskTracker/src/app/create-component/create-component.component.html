@@ -1,0 +1,36 @@
+<div>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <h2>Add To-Do Tasks</h2>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form #taskRef="ngForm" (ngSubmit)="storeTask(taskRef.value)">
+                <mat-form-field>
+                    <mat-label>ID</mat-label>
+                    <input matInput type="text" name="id" ngModel />
+                </mat-form-field>
+                <br/>
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" name="name" ngModel />
+                </mat-form-field>
+                <br />
+                <mat-form-field>
+                    <mat-label>Task</mat-label>
+                    <input matInput type="text" name="task" ngModel />
+                </mat-form-field>
+                <br/>
+                <mat-form-field>
+                    <mat-label>Deadline</mat-label>
+                    <input matInput type="date" name="deadline" ngModel />
+                </mat-form-field>
+                <br/>
+                <button mat-raised-button color="primary" type="submit">Store</button>
+                &nbsp;
+                <button mat-raised-button color="warn" type="reset">Clear</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
