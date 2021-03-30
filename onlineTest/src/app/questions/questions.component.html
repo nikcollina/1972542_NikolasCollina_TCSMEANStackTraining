@@ -1,0 +1,57 @@
+<div>
+    <mat-card *ngIf="!results">
+        <mat-card-header>
+            <mat-card-title>
+                <h2>Questions</h2>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form #taskRef="ngForm" (ngSubmit)="submitTest(taskRef.value)">
+                <br/>
+                <div *ngFor="let i of getIndicies">
+                    <mat-radio-group class="radio-group" required [(ngModel)]="answers[i]" name="{{i}}">
+                        <mat-label>{{questions[i].number}} {{questions[i].q}}</mat-label><br />
+                        <p></p>
+                        <div *ngFor="let a of questions[i].answers">
+                            <mat-radio-button class="radio-button" required name="{{i}}" [value]="a">
+                                {{ a }}
+                            </mat-radio-button>
+                        </div>
+                    </mat-radio-group>
+                    <hr/>
+                </div>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!taskRef.form.valid">Submit</button>
+                &nbsp;
+                <button mat-raised-button color="warn" type="reset">Clear</button>
+                <br />
+            </form>
+            
+        </mat-card-content>
+    </mat-card>
+    <mat-card *ngIf="results">
+        <mat-card-header>
+            <mat-card-title>
+                <h2>Results</h2>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngFor="let i of getIndicies">
+                <h3>Question {{questions[i].number}}</h3>
+                <p>{{questions[i].q}}</p>
+                <div *ngIf="correct[i]" class="pass">
+                    <p>Your answer: {{answers[i]}} was correct</p>
+                </div>
+                <div *ngIf="!correct[i]" class="fail">
+                    <p>Your answer: {{answers[i]}}</p>
+                    <p>Correct answer: {{questions[i].correct}}</p>
+                </div>
+                
+                <hr/>
+            </div>
+            <div *ngIf="pass" class="pass">{{result}}</div>
+            <div *ngIf="!pass" class="fail">{{result}}</div>
+            
+            <button mat-raised-button color="primary" type="button" (click)="toggleResults()">Take Again</button>
+        </mat-card-content>
+    </mat-card>
+</div>
