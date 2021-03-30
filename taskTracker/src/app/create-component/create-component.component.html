@@ -9,25 +9,25 @@
             <form #taskRef="ngForm" (ngSubmit)="storeTask(taskRef.value)">
                 <mat-form-field>
                     <mat-label>ID</mat-label>
-                    <input matInput type="text" name="id" ngModel />
+                    <input matInput type="text" name="id" ngModel required />
                 </mat-form-field>
                 <br/>
                 <mat-form-field>
                     <mat-label>Name</mat-label>
-                    <input matInput type="text" name="name" ngModel />
+                    <input matInput type="text" name="name" ngModel required />
                 </mat-form-field>
                 <br />
                 <mat-form-field>
                     <mat-label>Task</mat-label>
-                    <input matInput type="text" name="task" ngModel />
+                    <input matInput type="text" name="task" ngModel required />
                 </mat-form-field>
                 <br/>
                 <mat-form-field>
                     <mat-label>Deadline</mat-label>
-                    <input matInput type="date" name="deadline" ngModel />
+                    <input matInput type="date" name="deadline" ngModel required />
                 </mat-form-field>
                 <br/>
-                <button mat-raised-button color="primary" type="submit">Store</button>
+                <button mat-raised-button color="primary" type="submit" [disabled]="!taskRef.form.valid">Store</button>
                 &nbsp;
                 <button mat-raised-button color="warn" type="reset">Clear</button>
             </form>

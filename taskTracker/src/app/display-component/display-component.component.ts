@@ -11,12 +11,17 @@ export class DisplayComponentComponent implements OnInit {
   tasks:Array<Task>=[];
   displayedColumns: string[] = ['id', 'name', 'task', 'deadline'];
   dataSource = this.tasks;
-  constructor(public taskSer:TaskService) { }
 
+  constructor(public taskSer:TaskService) { }
+  
+  
   ngOnInit(): void {
     this.taskSer.retrieveTasks().subscribe(result=>this.tasks=result,
       error=>console.log(error));
+      
   }
+
+  
   
 }
 
